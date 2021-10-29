@@ -8,6 +8,7 @@ const error = require('./middlewares/error');
 const createTalker = require('./controllers/createTalker');
 const authToken = require('./middlewares/authToken');
 const talkerValidation = require('./middlewares/talkerValidation');
+const editTalker = require('./controllers/editTalker');
 
 const app = express();
 app.use(bodyParser.json());
@@ -25,6 +26,8 @@ app.post('/login', auth, login);
 app.get('/talker', allTalkers);
 
 app.get('/talker/:id', talkerById);
+
+app.put('/talker/:id', authToken, talkerValidation, editTalker);
 
 app.post('/talker', authToken, talkerValidation, createTalker);
 

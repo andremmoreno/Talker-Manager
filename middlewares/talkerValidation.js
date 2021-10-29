@@ -58,7 +58,7 @@ const validation = (name, age, talk, next) => {
   nameValidation(name, next);
   ageValidation(age, next);
   if (!talk) return next(INCORRECT_TALK);
-  if (!talk.watchedAt || !talk.rate) return next(INCORRECT_TALK);
+  if (!talk.watchedAt || talk.rate === undefined) return next(INCORRECT_TALK);
   talkValidation(talk, next);
 };
 
