@@ -10,6 +10,7 @@ const authToken = require('./middlewares/authToken');
 const talkerValidation = require('./middlewares/talkerValidation');
 const editTalker = require('./controllers/editTalker');
 const deleteTalker = require('./controllers/deleteTalker');
+const searchTalker = require('./controllers/searchTalker');
 
 const app = express();
 app.use(bodyParser.json());
@@ -25,6 +26,8 @@ app.get('/', (_request, response) => {
 app.post('/login', auth, login);
 
 app.get('/talker', allTalkers);
+
+app.get('/talker/search', authToken, searchTalker);
 
 app.get('/talker/:id', talkerById);
 
