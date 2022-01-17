@@ -5,8 +5,6 @@ Desenvolver uma API de um CRUD (**C**reate, **R**ead, **U**pdate e **D**elete) d
 
 # Habilidades
 
-Neste projeto, verificamos se você é capaz de:
-
 - Realizar operações assíncronas utilizando callbacks;
 - Realizar operações assíncronas utilizando Promises;
 - Ler e escrever arquivos localmente com NodeJS;
